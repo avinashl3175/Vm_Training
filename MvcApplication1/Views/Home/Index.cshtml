@@ -1,0 +1,51 @@
+﻿
+
+@{
+    ViewBag.Title = "Export";
+}
+@model List<ExportToExcel_PDF_CSV.Models.ClientsList>
+<h2>
+    Export to PDF, Excel CSV Example
+</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Date Of Birth Name
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.Dob
+            </td>
+            <td>
+                @item.Email
+            </td>
+        </tr>
+    }
+</table>
+<div class="ExportSection">
+    @Html.ActionLink("Export to Csv", "ExportClientsListToCSV")
+    @Html.ActionLink("Export to Excel", "ExportClientsListToExcel")
+
+</div>
+
